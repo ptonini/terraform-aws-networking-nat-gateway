@@ -18,4 +18,11 @@ resource "aws_route_table" "this" {
       vpc_peering_connection_id = route.value.connection_id
     }
   }
+  dynamic "route" {
+    for_each = var.network_interface_routes
+    content {
+      cidr_block           = route.value.cidr_block
+      network_interface_id = route.value.network_interface_id
+    }
+  }
 }
