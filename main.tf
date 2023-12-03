@@ -6,7 +6,7 @@ resource "aws_nat_gateway" "this" {
 }
 
 resource "aws_route_table" "this" {
-  vpc_id = var.vpc.id
+  vpc_id = var.vpc_id
 
   route {
     cidr_block     = "0.0.0.0/0"
@@ -30,6 +30,6 @@ resource "aws_route_table" "this" {
   }
 
   tags = {
-    Name = "${var.vpc.name}-nat-gtw"
+    Name = var.name
   }
 }

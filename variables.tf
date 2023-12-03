@@ -1,11 +1,6 @@
-variable "vpc_id" {}
+variable "name" {}
 
-variable "vpc" {
-  type = object({
-    name = string
-    id   = string
-  })
-}
+variable "vpc_id" {}
 
 variable "subnet_id" {}
 
