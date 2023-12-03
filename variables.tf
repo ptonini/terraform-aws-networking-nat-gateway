@@ -1,5 +1,12 @@
 variable "vpc_id" {}
 
+variable "vpc" {
+  type = object({
+    name = string
+    id   = string
+  })
+}
+
 variable "subnet_id" {}
 
 variable "peering_routes" {
